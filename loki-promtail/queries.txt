@@ -1,0 +1,8 @@
+## LogQL
+
+{filename="/var/log/audit/audit.log",job="auditlog"} |= "op=login"
+{filename="/var/log/audit/audit.log",job="auditlog"} |= "daemon.json"
+
+More info:
+- https://grafana.com/docs/loki/latest/logql/
+- https://www.techtarget.com/searchitoperations/tutorial/Follow-this-Grafana-Loki-tutorial-to-query-IT-log-data
