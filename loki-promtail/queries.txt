@@ -2,6 +2,7 @@
 
 {filename="/var/log/audit/audit.log",job="auditlog"} |= "op=login"
 {filename="/var/log/audit/audit.log",job="auditlog"} |= "daemon.json"
+{filename="/var/log/audit/audit.log",job="auditlog"} |= "key=\"docker\"" |= "runc"
 
 More info:
 - https://grafana.com/docs/loki/latest/logql/
