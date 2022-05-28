@@ -1,8 +1,24 @@
 ## LogQL
 
+Basic:
+{ job = "default/tns-app" }
+{ job = "default/tns-app" } | logfmt # check detected fields
+{ job = "default/tns-app" } | logfmt | level="warn"
+{ job = "default/tns-app" } | logfmt | level="error"
+{ job = "default/tns-app" } | logfmt | level="debug"
+{ job = "default/tns-app" } | logfmt | level="info"
+
+
+
+Other examples:
 {filename="/var/log/audit/audit.log",job="auditlog"} |= "op=login"
 {filename="/var/log/audit/audit.log",job="auditlog"} |= "daemon.json"
 {filename="/var/log/audit/audit.log",job="auditlog"} |= "key=\"docker\"" |= "runc"
+
+Logfmt:
+{filename="/var/log/syslog",job="varlogs"} | logfmt | level="info"
+{filename="/var/log/syslog",job="varlogs"} | logfmt | level="error"
+{filename="/var/log/auth.log",job="varlogs"} | logfmt |= "ubuntu" | USER="root"
 
 More info:
 - https://grafana.com/docs/loki/latest/logql/
